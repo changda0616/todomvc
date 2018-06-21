@@ -1,5 +1,19 @@
 <header class="header">
+  <!-- Interpolation -->
   <h1>{{title}}</h1>
-  <!-- <input class="new-todo" [(ngModel)]="inputValue" [placeholder]="inputHolder" (input)="this.handleClick($event)" (value)="inputValue" autofocus> -->
-  <input class="new-todo" [placeholder]="inputHolder" (input)="this.handleClick($event)" (value)="inputValue" autofocus>
+
+  <!-- without ngmodel  -->
+  <input class="new-todo"
+    [placeholder]="inputHolder"
+    [value]="inputValue"
+    (input)="this.handleClick($event)"
+    autofocus>
+
+  <!-- with ngmodel  -->
+  <!-- <input class="new-todo"
+    [(ngModel)]="inputValue"
+    [placeholder]="inputHolder"
+    (input)="this.handleClick($event)"
+    autofocus> -->
+
 </header>
