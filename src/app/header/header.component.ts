@@ -14,5 +14,6 @@ export class HeaderComponent implements OnInit {
   }
   handleClick(e) {
     console.log(e);
+    this.title = e.target.value;
   }
 }
