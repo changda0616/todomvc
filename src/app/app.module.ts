@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { ListComponent } from './list/list.component';
 import { FoorterComponent } from './foorter/foorter.component';
 import { ListFooterComponent } from './list-footer/list-footer.component';
+import { DataService } from './data.service';
 
 
 @NgModule({
@@ -27,7 +28,7 @@ import { ListFooterComponent } from './list-footer/list-footer.component';
   ],
 
   // All the service gonna be used in the project
-  providers: [],
+  providers: [DataService],
 
   // Only the root module will use bootstrap
   bootstrap: [AppComponent]

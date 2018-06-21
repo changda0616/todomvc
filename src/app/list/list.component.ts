@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 interface Todoers {
   labelText: string;
   inputValue: string;
@@ -12,19 +13,14 @@ interface Todoers {
 })
 
 export class ListComponent implements OnInit {
-  constructor() { }
+  constructor(private dataService: DataService) {}
 
   listTitle = `hello from component`;
   todoItems: Todoers[] = [];
   todoToggle = false;
 
   ngOnInit() {
-    this.todoItems = [
-      {labelText: 'Taste JavaScript', inputValue: 'Create a TodoMVC template',
-        inputDate: 'Fri Apr 15 1988 00:00:00 GMT-0700', isChecked: true},
-      {labelText: 'Buy a unicorn', inputValue: 'Rule the web',
-        inputDate: 'Fri Apr 15 1988 00:00:00 GMT-0700', isChecked: false}
-    ];
+    this.todoItems = this.dataService.getTodo();
   }
 
   handleItemChange() {
