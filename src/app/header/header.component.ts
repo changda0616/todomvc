@@ -8,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 export class HeaderComponent implements OnInit {
 
   constructor() { }
+
   title = `Todos`;
   inputHolder = `What needs to be done`;
+  inputValue = `This is the input value from component`;
+
   ngOnInit() {
   }
   handleClick(e) {
-    console.log(e);
+    // console.log(e);
     this.title = e.target.value;
+    console.log(this.inputValue);
   }
 }

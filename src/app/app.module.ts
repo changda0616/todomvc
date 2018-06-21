@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -22,7 +22,8 @@ import { ListFooterComponent } from './list-footer/list-footer.component';
   // All the module gonna be used in the project,
   // usually will be module provided by angular or 3rd party module. (NgxPermissionsModule, GM, HttpClientModule etc)
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
 
   // All the service gonna be used in the project
