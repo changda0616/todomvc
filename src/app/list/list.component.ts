@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 interface Todoers {
   labelText: string;
   inputValue: string;
+  inputDate: string;
   isChecked: boolean;
 }
 @Component({
@@ -19,12 +20,16 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.todoItems = [
-      {labelText: 'Taste JavaScript', inputValue: 'Create a TodoMVC template', isChecked: true},
-      {labelText: 'Buy a unicorn', inputValue: 'Rule the web', isChecked: false}
+      {labelText: 'Taste JavaScript', inputValue: 'Create a TodoMVC template',
+        inputDate: 'Fri Apr 15 1988 00:00:00 GMT-0700', isChecked: true},
+      {labelText: 'Buy a unicorn', inputValue: 'Rule the web',
+        inputDate: 'Fri Apr 15 1988 00:00:00 GMT-0700', isChecked: false}
     ];
   }
+
   handleItemChange() {
     this.todoToggle = true;
     setTimeout(() => {this.todoToggle = false; }, 1500);
   }
+
 }
