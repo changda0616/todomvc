@@ -26,4 +26,6 @@
     </li>
   </ul>
 </section>
+<app-list-footer [todos]="todoItems" (clearCompleted)="clearCompleted()"></app-list-footer>
+
 <div *ngIf="todoToggle" class="notification">Todo item has been toggled!</div>
