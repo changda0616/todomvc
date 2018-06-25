@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
-interface Todoers {
+export interface Todoers {
   labelText: string;
-  inputValue: string;
   inputDate: string;
   isChecked: boolean;
 }
@@ -11,19 +11,25 @@ export class DataService {
 
   constructor() { }
 
-  todos: Todoers[] = [{
-        labelText: 'Taste JavaScript', inputValue: 'Create a TodoMVC template',
+  _Todes = new Subject<Todoers[]>();
+
+  // Fake data source
+  todoes: Todoers[] = [{
+        labelText: 'Taste JavaScript',
         inputDate: 'Fri Apr 15 1988 00:00:00 GMT-0700', isChecked: true
       },
       {
-        labelText: 'Buy a unicorn', inputValue: 'Rule the web',
+        labelText: 'Buy a unicorn',
         inputDate: 'Fri Apr 15 1988 00:00:00 GMT-0700', isChecked: false
       }];
 
   getTodo() {
-    return this.todos;
+    this._Todes.next(this.todoes);
   }
-  removeTodo() {
-    console.log('clear');
+
+  removeTodo(items) {
+    items = items.filter(item => item.isChecked === false);
+    this._Todes.next(items);
   }
+
 }

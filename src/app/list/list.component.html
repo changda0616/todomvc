@@ -13,19 +13,17 @@
         [(ngModel)]="item.isChecked"
         (change)="handleItemChange()"
         >
-        <label>{{item.labelText}}</label>
-        <label>{{item.inputDate}}</label>
+        <!-- <label>{{item.labelText}}</label>
+        <label>{{item.inputDate}}</label> -->
 
         <!-- binding with pipe -->
-        <!-- <label>{{item.labelText | uppercase}}</label>
-        <label>{{item.inputDate | date}}</label> -->
-
+        <label>{{item.labelText | uppercase}}</label>
+        <label>{{item.inputDate | date:'full':'': 'en-US'}}</label>
         <button class="destroy"></button>
       </div>
-      <!-- <input class="edit" [value]="item.inputValue"> -->
     </li>
   </ul>
 </section>
 <app-list-footer [todos]="todoItems" (clearCompleted)="clearCompleted()"></app-list-footer>
 
-<div *ngIf="todoToggle" class="notification">Todo item has been toggled!</div>
+<div *ngIf="todoToggle" class="hsin">Todo item has been toggled!</div>

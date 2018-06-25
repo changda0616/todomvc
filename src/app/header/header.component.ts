@@ -11,9 +11,7 @@ export class HeaderComponent implements OnInit {
 
   // Interpolation
   title = `Todos`;
-
   // [ Property ] Binding
-  inputHolder = `What needs to be done`;
 
   // Two-way [( ng-model )] Binding
   inputValue = `This is the input value from component`;
@@ -23,7 +21,8 @@ export class HeaderComponent implements OnInit {
 
   // ( Event ) Binding
   handleClick(e) {
-    this.title = e.target.value;
+    this.inputValue = e.target.value;
+    // console.log(e);
     console.log(this.inputValue);
   }
 

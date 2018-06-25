@@ -8,10 +8,15 @@ import { ListComponent } from './list/list.component';
 import { FoorterComponent } from './foorter/foorter.component';
 import { ListFooterComponent } from './list-footer/list-footer.component';
 import { DataService } from './data.service';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/fr';
+import localeZh from '@angular/common/locales/zh';
+
+registerLocaleData(localeZh);
 
 
 @NgModule({
-  // All the componen gonna be used in the project
+  // All the componen gonna be used in the module
   declarations: [
     AppComponent,
     HeaderComponent,
@@ -30,7 +35,6 @@ import { DataService } from './data.service';
   // All the service gonna be used in the project
   providers: [DataService],
 
-  // Only the root module will use bootstrap
   bootstrap: [AppComponent]
 })
 export class AppModule { }
